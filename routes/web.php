@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 route::view('/','home')->name('home');
 route::view('/about','about')->name('about');
-route::view('/portfolio','portfolio')->name('portfolio');
+route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
 route::view('/contact','contact')->name('contact');
 
