@@ -76,3 +76,31 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+### Instalación de lo necesario para crear el proyecto en Windows 🔧
+
+Para el servidor local se usara Laragon, el cual se descarga desde la web https://laragon.org/download/ 
+Al tener instalado Laragon podemos abrir la terminal que nos ofrece para verificar si composer y laravel estan disponibles con los comandos
+```
+composer
+```
+y
+```
+laravel
+```
+
+si no tenemos laravel instalado usamos
+
+```
+composer global require laravel/installer
+```
+Para crear un proyecto laravel usar el comando
+```
+laravel new app 
+```
+En este punto ya podemos ingresar a la carpeta app 
+```
+C:\laragon\www
+cd app 
+```
+En este punto ya podemos ingresar a la carpeta app, desde acá ejecutaremos comandos PHP artisan
