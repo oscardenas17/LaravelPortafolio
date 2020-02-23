@@ -24,3 +24,7 @@ route::view('/about','about')->name('about');
 route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
 route::view('/contact','contact')->name('contact');
 
+
+/*FORMULARIO*/
+Route::post('contact', 'FormController@store');
+
