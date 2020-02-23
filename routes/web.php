@@ -26,5 +26,5 @@ route::view('/contact','contact')->name('contact');
 
 
 /*FORMULARIO*/
-Route::post('contact', 'FormController@store');
+Route::post('contact', 'FormController@validar');
 

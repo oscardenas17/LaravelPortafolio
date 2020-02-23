@@ -11,8 +11,14 @@ class FormController extends Controller
     //         return $request->get('name');
     // }
 
-    public function store(){
-        return request('email');   
+    public function validar(){
+       request()->validate([
+           'name'=>'required',
+           'email'=>'required|email',
+           'subject'=>'required',
+           'content'=>'required|min:3'
+       ]);   
+       return 'Datos validados';
     }
 }
 
