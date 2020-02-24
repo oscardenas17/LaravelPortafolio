@@ -3,7 +3,9 @@
 @section('title','Contact')
 
 @section('content')
-    <h1>contact</h1>
+
+<h1>{{__('Contact')}}</h1>
+
 {{-- {{$errors}} 
 
     @if ($errors->any())

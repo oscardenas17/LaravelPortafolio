@@ -17,6 +17,9 @@ class FormController extends Controller
            'email'=>'required|email',
            'subject'=>'required',
            'content'=>'required|min:3'
+       ],[
+        //mensaje personalizado para el mensaje de validación
+            'name.required' => __('I need your name') ,
        ]);   
        return 'Datos validados';
     }
