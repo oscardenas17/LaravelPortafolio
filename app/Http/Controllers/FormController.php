@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MensajeRecibido;
 // use Illuminate\Http\Request;
 
 class FormController extends Controller
@@ -12,7 +13,7 @@ class FormController extends Controller
     // }
 
     public function validar(){
-       request()->validate([
+      $mensaje =  request()->validate([
            'name'=>'required',
            'email'=>'required|email',
            'subject'=>'required',
@@ -20,8 +21,14 @@ class FormController extends Controller
        ],[
         //mensaje personalizado para el mensaje de validación
             'name.required' => __('I need your name') ,
-       ]);   
-       return 'Datos validados';
+       ]);  
+       
+       //eNVIAR eMAIL
+       Mail::to('oscardenas17@gmail.com')->queue(new MensajeRecibido($mensaje));
+
+       
+       //return new MensajeRecibido($mensaje);
+       return 'Mensaje enviado';
     }
 }
 
