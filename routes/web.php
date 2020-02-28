@@ -20,11 +20,13 @@ Route::get('/', function () {
 })->name('home');*/
 
 route::view('/','home')->name('home');
-route::view('/about','about')->name('about');
-route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
-route::view('/contact','contact')->name('contact');
+route::view('/quienes-somos','about')->name('about');
+route::get('/portafolio', 'ProjectController@index')->name('projects.index');
+route::get('/portafolio/{id}', 'ProjectController@show')->name('projects.show');
+
+route::view('/contacto','contact')->name('contact');
 
 
 /*FORMULARIO*/
-Route::post('contact', 'FormController@validar');
+Route::post('contacto', 'FormController@validar')->name('form.validar');
 

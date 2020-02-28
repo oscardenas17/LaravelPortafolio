@@ -16,7 +16,7 @@
 
 
 
-<form action="{{ route('contact') }}" method="POST">
+<form action="{{ route('form.validar') }}" method="POST">
     @csrf
         <input type="text" name="name" placeholder="Nombre..." value="{{old('name')}}"><br>
         {!!$errors->first('name','<small> :message </small><br>') !!}

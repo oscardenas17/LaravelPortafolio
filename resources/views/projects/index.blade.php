@@ -7,11 +7,9 @@
 
     <ul>                   
         @forelse($portafolio as $proyecto)
-            <li> {{  $proyecto->title }} </li>
-            <small> {{ $proyecto->description }} </small> <br>
-            <small> {{ $proyecto->created_at->format('Y-m') }} </small><br>
-            <small> {{ $proyecto->created_at->diffForHumans() }} </small>
-
+    <li><a href="{{ route('projects.show', $proyecto) }}"> {{              $proyecto->title }}  </a> </li>
+            {{-- <small> {{ $proyecto->description }} </small> <br> --}}
+            
           
 
         @empty
