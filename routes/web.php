@@ -21,12 +21,18 @@ Route::get('/', function () {
 
 route::view('/','home')->name('home');
 route::view('/quienes-somos','about')->name('about');
+
+/*portafolio*/ 
 route::get('/portafolio', 'ProjectController@index')->name('projects.index');
+route::get('/portafolio/crear', 'ProjectController@create')->name('projects.create');
+route::post('/portafolio', 'ProjectController@store')->name('projects.store');
 route::get('/portafolio/{id}', 'ProjectController@show')->name('projects.show');
 
-route::view('/contacto','contact')->name('contact');
+
 
 
 /*FORMULARIO*/
+
+route::view('/contacto','contact')->name('contact');
 Route::post('contacto', 'FormController@validar')->name('form.validar');
 

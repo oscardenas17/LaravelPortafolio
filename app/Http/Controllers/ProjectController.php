@@ -22,13 +22,10 @@ class ProjectController extends Controller
 
     }
 
-
         // public function show($id){
-            
         //     return view('projects.show',[
-
-        //         'project' => Project::findOrFail($id)
-        //     ]);
+        //    'project' => Project::findOrFail($id)
+        //  ]);
 
         //ROUTE MODEL BINDING
         public function show( Project $id){
@@ -37,7 +34,27 @@ class ProjectController extends Controller
     
                 'project' => $id
             ]);
+    }
+
+
+    public function create(){
+        return view('projects.create');
+    }
+
+    public function store(){
     
 
+       //  O usar ->Project::create(request()->all());
+       Project::create([
+        'title'=> request('title'),
+        'url'=> request('url'),
+        'description'=> request('description'),
+
+       ]);
+
+       return redirect()->route('projects.index');
     }
+
+
+
 }
