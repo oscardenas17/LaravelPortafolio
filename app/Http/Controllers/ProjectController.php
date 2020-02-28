@@ -10,11 +10,9 @@ use Illuminate\Http\Request;
 class ProjectController extends Controller
 {
     public function index(){
-       // $portafolio= \DB::table('projects')->get();
-
-   // $portafolio = Project::latest('updated_at')->get();
-
-    //$portafolio = Project::latest()->paginate(2);
+        // $portafolio= \DB::table('projects')->get();
+        // $portafolio = Project::latest('updated_at')->get();
+        //$portafolio = Project::latest()->paginate(2);
 
     return view('projects.index', [
 
@@ -25,12 +23,21 @@ class ProjectController extends Controller
     }
 
 
-    public function show($id){
-        
-        return view('projects.show',[
+        // public function show($id){
+            
+        //     return view('projects.show',[
 
-            'project' => Project::findOrFail($id)
-        ]);
+        //         'project' => Project::findOrFail($id)
+        //     ]);
+
+        //ROUTE MODEL BINDING
+        public function show( Project $id){
+        
+            return view('projects.show',[
+    
+                'project' => $id
+            ]);
+    
 
     }
 }
