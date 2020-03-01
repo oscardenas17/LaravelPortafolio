@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProjectRequest;
 
 //use DB;
 
@@ -41,18 +42,20 @@ class ProjectController extends Controller
         return view('projects.create');
     }
 
-    public function store(){
+
+
+    public function store(CreateProjectRequest $request){
     
-     //validación de campos   
-        $fields = request()->validate([
-            'title'=> 'required',
-            'url'=> 'required',
-            'description'=> 'required',
-        ]);
+     //validación de campos   a no es necesaria aca todo esta en el createpro..requeste
+        // $fields = request()->validate([
+        //     'title'=> 'required',
+        //     'url'=> 'required',
+        //     'description'=> 'required',
+        // ]);
 
             //guardar campos            
         // Project::create(request()->only('title','url','description'));
-           Project::create($fields);
+           Project::create($request->validated());
 
     //    Project::create([
     //     'title'=> request('title'),
