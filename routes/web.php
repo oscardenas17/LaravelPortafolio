@@ -32,7 +32,6 @@ route::view('/quienes-somos','about')->name('about');
      ->parameters(['portafolio'=>'project']);
 
 /* RUTAS UNA POR UNA */
-
 // route::get('/portafolio', 'ProjectController@index')->name('projects.index');
 // route::get('/portafolio/crear', 'ProjectController@create')->name('projects.create');
 // Route::get('/portafolio/{id}/editar', 'ProjectController@edit')->name('projects.edit');
