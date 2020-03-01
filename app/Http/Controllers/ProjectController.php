@@ -88,4 +88,11 @@ public function update(Project $id, SaveProjectRequest $request){
    }
 
 
+   public function destroy( Project $id){
+         $id ->delete();
+         return redirect()->route('projects.index');
+    
+    }
+
+
 }

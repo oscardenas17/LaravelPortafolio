@@ -29,7 +29,7 @@ Route::get('/portafolio/{id}/editar', 'ProjectController@edit')->name('projects.
 Route::patch('/portafolio/{id}', 'ProjectController@update')->name('projects.update');
 route::post('/portafolio', 'ProjectController@store')->name('projects.store');
 route::get('/portafolio/{id}', 'ProjectController@show')->name('projects.show');
-
+route::delete('/portafolio/{id}', 'ProjectController@destroy')->name('projects.destroy');
 
 
 
