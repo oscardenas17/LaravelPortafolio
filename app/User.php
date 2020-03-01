@@ -15,9 +15,11 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    //  guarded para que no se asignen o se puedan guardar datos en esos campos => - en el contrlador usar $fields = request()->validate([...
+    protected $guarded = [];
+    // -> Cuales campos guarda= protected $fillable = [
+    //     'name', 'email', 'password',
+    // ];
 
     /**
      * The attributes that should be hidden for arrays.
