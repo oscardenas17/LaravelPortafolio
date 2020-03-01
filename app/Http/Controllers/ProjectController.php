@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Illuminate\Http\Request;
-use App\Http\Requests\CreateProjectRequest;
+use App\Http\Requests\SaveProjectRequest;
 
 //use DB;
 
@@ -44,7 +44,7 @@ class ProjectController extends Controller
 
 
 
-    public function store(CreateProjectRequest $request){
+    public function store(SaveProjectRequest $request){
     
      //validación de campos   a no es necesaria aca todo esta en el createpro..requeste
         // $fields = request()->validate([
@@ -64,9 +64,26 @@ class ProjectController extends Controller
 
     //    ]);
 
-       return redirect()->route('projects.index');
+            return redirect()->route('projects.index');
     }
 
+
+
+    public function edit( Project $id){
+        
+        return view('projects.edit', [
+
+            'project' => $id
+        ]);
+}
+
+
+
+public function update(Project $id, SaveProjectRequest $request){
+    
+    $id->update($request->validated());
+    return redirect()->route('projects.show', $id);
+   }
 
 
 }
