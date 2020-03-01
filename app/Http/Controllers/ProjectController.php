@@ -29,11 +29,11 @@ class ProjectController extends Controller
         //  ]);
 
         //ROUTE MODEL BINDING
-        public function show( Project $id){
+        public function show( Project $project){
         
             return view('projects.show',[
     
-                'project' => $id
+                'project' => $project
             ]);
     }
 
@@ -71,25 +71,25 @@ class ProjectController extends Controller
 
 
 
-    public function edit( Project $id){
+    public function edit( Project $project){
         
         return view('projects.edit', [
 
-            'project' => $id
+            'project' => $project
         ]);
 }
 
 
 
-public function update(Project $id, SaveProjectRequest $request){
+public function update(Project $project, SaveProjectRequest $request){
     
-    $id->update($request->validated());
-    return redirect()->route('projects.show', $id);
+    $project->update($request->validated());
+    return redirect()->route('projects.show', $project);
    }
 
 
-   public function destroy( Project $id){
-         $id ->delete();
+   public function destroy( Project $project){
+    $project ->delete();
          return redirect()->route('projects.index');
     
     }
