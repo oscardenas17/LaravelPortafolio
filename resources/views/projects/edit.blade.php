@@ -4,6 +4,8 @@
 
 @section('content')
     <h1>Editar Proyecto</h1>
+    
+
     @include('partials.validation-errors')
     
 <form action=" {{ route('projects.update', $project) }}" method="POST"> 

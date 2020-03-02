@@ -28,7 +28,7 @@ class FormController extends Controller
 
        
        //return new MensajeRecibido($mensaje);
-       return 'Mensaje enviado';
+       return back()->with('status','Recibimos tu mensaje');
     }
 }
 

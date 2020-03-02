@@ -5,6 +5,7 @@
 @section('content')
     <h1>Crear Proyecto</h1>
 
+
 @include('partials.validation-errors')
 
 <form action=" {{ route('projects.store') }}" method="POST"> 
